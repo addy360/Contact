@@ -1,2 +1,2 @@
 # Contact
-react app for keeping user contacts
+Mern app for keeping user contacts
