@@ -8,6 +8,8 @@ const { db } = require('./config/db')
 const app = express()
 const PORT = process.env.PORT || 8080
 
+app.use(express.json())
+
 app.use('/api/auth', authRoutes)
 app.use('/api/contact', contactRoutes)
 app.use('/api/users', usersRoutes)

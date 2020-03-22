@@ -8,6 +8,8 @@ mongoose.Promise = Promise
 exports.db = ()=>{
 	return mongoose.connect(URI,{
 		useNewUrlParser: true,
-  		useUnifiedTopology: true
+  		useUnifiedTopology: true,
+  		useCreateIndex:true,
+  		useFindAndModify:false
 	})
 }
