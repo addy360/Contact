@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "client":"npm start --prefix client",
-    "conc":"concurrently \"npm run dev\" \"npm run client\" "
+    "client": "npm start --prefix client",
+    "conc": "concurrently \"npm run dev\" \"npm run client\" "
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "config": "^3.3.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
     "jsonwebtoken": "^8.5.1",

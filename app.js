@@ -2,10 +2,12 @@ const express = require('express')
 const authRoutes = require('./routes/auth')
 const contactRoutes = require('./routes/contact')
 const usersRoutes = require('./routes/users')
+const cors = require("cors")
 const { db } = require('./config/db')
 
 
 const app = express()
+app.use(cors())
 const PORT = process.env.PORT || 8080
 
 app.use(express.json())

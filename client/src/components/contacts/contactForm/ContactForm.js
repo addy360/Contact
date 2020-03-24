@@ -1,9 +1,11 @@
 import React, {useState, useContext, useEffect , Fragment} from 'react'
 
 import ContactContext from "../../../context/contact/ContactContext"
+import AlertContext from "../../../context/alert/alertContext"
 
 const ContactForm = props=>{
 	const { addContact, current, clearCurrent, updateContact } = useContext(ContactContext)
+	const { setAlert } = useContext(AlertContext)
 	useEffect(()=>{
 		current ? setContact(current) : setContact({
 			name:"",
@@ -28,6 +30,9 @@ const ContactForm = props=>{
 	}
 	const onSubmit = e =>{
 		e.preventDefault()
+		if (name === "" ) return setAlert('Name field cannot be empty', 'danger')
+		if (email === "" ) return setAlert('Email field cannot be empty', 'danger')
+
 		!current ? addContact(contact) : updateContact(contact)
 		setContact({
 			name:"",

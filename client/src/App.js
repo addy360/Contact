@@ -6,10 +6,17 @@ import About from './components/about/About'
 import Register from './components/auth/register/Register'
 import Login from './components/auth/login/Login'
 import Home from './components/home/Home'
+import Alerts from './components/alert/Alert'
+
 import ContactState from './context/contact/contactState' 
 import AuthState from './context/auth/AuthState' 
 import AlertState from './context/alert/AlertState' 
+
 import './App.css';
+
+import { setAuthToken } from './context/utils'
+
+if (localStorage.item) setAuthToken(localStorage.token)
 
 const App = ()=>{
   return (
@@ -18,6 +25,7 @@ const App = ()=>{
         <AlertState>
           <Navbar icon="far fa-address-book" title="Contact Safe" />
           <div className="container">
+            <Alerts/>
           	<Switch>
           		<Route exact path = "/" component={Home} />
           		<Route path = "/about" component={About} />
