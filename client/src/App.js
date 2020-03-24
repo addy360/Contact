@@ -5,18 +5,21 @@ import Navbar from './components/navbar/Navbar'
 import About from './components/about/About'
 import Home from './components/home/Home'
 import ContactState from './context/contact/contactState' 
+import AuthState from './context/auth/AuthState' 
 import './App.css';
 
 const App = ()=>{
   return (
     <ContactState>
-      <Navbar icon="far fa-address-book" title="Contact Safe" />
-      <div className="container">
-      	<Switch>
-      		<Route exact path = "/" component={Home} />
-      		<Route path = "/about" component={About} />
-      	</Switch>
-      </div>
+      <AuthState>
+        <Navbar icon="far fa-address-book" title="Contact Safe" />
+        <div className="container">
+        	<Switch>
+        		<Route exact path = "/" component={Home} />
+        		<Route path = "/about" component={About} />
+        	</Switch>
+        </div>
+      </AuthState>
     </ContactState>
   );
 }
