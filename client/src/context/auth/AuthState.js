@@ -39,11 +39,26 @@ const AuthState = props =>{
 			loadUser()
 		})
 		.catch(err=>{
-			console.dir(err)
 			dispatch({type:REGISTER_FAIL, payload:err.response.data.msg})
 		})
 	}
+	const loginUser = formData =>{
+		const consfig = {
+			headers:{
+				'Content-Type':'application/json'
+			}
+		}
 
+		axios.post(`${DOMAIN}/api/auth`, formData, consfig)
+		.then(res=>{
+			dispatch({type:LOGIN_SUCCESS, payload:res.data})
+			loadUser()
+		})
+		.catch(err=>{
+			dispatch({type:LOGIN_FAIL, payload:err.response.data.msg})
+		})
+	}
+	
 	const loadUser = ()=>{
 		if (localStorage.token) setAuthToken(localStorage.token)
 		axios.get(`${DOMAIN}/api/auth`)
@@ -56,6 +71,9 @@ const AuthState = props =>{
 		})
 	}
 
+	const logoutUser = () => dispatch({type:LOGOUT})
+	
+
 	const clearErrors = ()=> dispatch({type:CLEAR_ERRORS})
 
 	return(
@@ -67,7 +85,9 @@ const AuthState = props =>{
 					error:state.error,
 					registerUser,
 					clearErrors,
-					loadUser
+					loadUser,
+					loginUser,
+					logoutUser
 				}}>
 			{props.children}
 		</AuthContext.Provider>
