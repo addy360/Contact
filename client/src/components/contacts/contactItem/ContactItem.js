@@ -6,7 +6,7 @@ const ContactItem = props=>{
 	const { contact } = props
 	const deleteHandler = e =>{
 		clearCurrent()
-		deleteContact(contact.id)
+		deleteContact(contact._id)
 	} 
 	const editHandler = e => setCurrent(contact)
 	return(

@@ -4,8 +4,6 @@ import { Route, Redirect } from 'react-router-dom'
 import AuthContext from '../../context/auth/authContext' 
 
 const PrivateRoute = props=>{
-	console.log(props)
-
 	const { isAuthenticated, loading } = useContext(AuthContext)
 	const {component:Component, ...rest} = props
 	return (

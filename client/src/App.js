@@ -17,7 +17,7 @@ import './App.css';
 
 import { setAuthToken } from './context/utils'
 
-if (localStorage.item) setAuthToken(localStorage.token)
+if (localStorage.token) setAuthToken(localStorage.token)
 
 const App = ()=>{
   return (

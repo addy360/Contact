@@ -35,7 +35,7 @@ const Login = props =>{
 			<form onSubmit={ onSubmit }  >
 				<h1 className="text-white lead ">Login</h1>
 				<input type="email" placeholder="Your email ie, 'SBashir@email.com'" name="email" onChange={onChange} value={ email } />
-				<input type="password" placeholder="Your password " name="password" onChange={onChange} value={ password } />
+				<input type="password" minLength="6" placeholder="Your password " name="password" onChange={onChange} value={ password } />
 				<input type="submit"  className="btn btn-success btn-block" />
 			</form>
 		</div>

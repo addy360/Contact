@@ -43,7 +43,7 @@ const Register = props =>{
 				<h1 className="text-white lead ">Register</h1>
 				<input type="text" placeholder="Your name ie, 'Sued Bashir'" name="name" onChange={onChange} value={ name } />
 				<input type="email" placeholder="Your email ie, 'SBashir@email.com'" name="email" onChange={onChange} value={ email } />
-				<input type="password" placeholder="Your password " name="password" onChange={onChange} value={ password } />
+				<input type="password" minLength="6" placeholder="Your password " name="password" onChange={onChange} value={ password } />
 				<input type="password" placeholder="Confirm password" name="password2" onChange={onChange} value={ password2 } />
 				<input type="submit"  className="btn btn-success btn-block" />
 			</form>

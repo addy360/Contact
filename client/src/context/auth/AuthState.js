@@ -66,7 +66,6 @@ const AuthState = props =>{
 			dispatch({type:USER_LOADED, payload:res.data})
 		})
 		.catch(err=>{
-			console.dir(err)
 			dispatch({type:AUTHOR_ERROR})
 		})
 	}
